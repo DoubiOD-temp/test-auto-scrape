@@ -1,66 +1,143 @@
-# Understanding Asymptotic Analysis: Big O, Big Omega, and Big Theta
+# Master the Map: A Comprehensive Guide to JavaScript Map Methods
 
-Asymptotic analysis is the cornerstone of algorithm complexity, allowing developers and computer scientists to predict how an algorithm's performance scales as the input size grows. This guide explores the three primary notations used to describe these bounds.
-
----
-
-## 1. Big O Notation ($O$) – The Upper Bound
-
-**Big O** describes the **worst-case scenario** or the maximum time/space an algorithm will take. It provides an energetic "ceiling" that the algorithm will never exceed.
-
-- **Mathematical Definition**: $f(n) = O(g(n))$ if there exist positive constants $c$ and $n_0$ such that $0 \leq f(n) \leq c \cdot g(n)$ for all $n \geq n_0$.
-- **In Plain English**: "The algorithm is at most this slow."
+A **Map** is a collection of keyed data items, similar to an Object. However, the main difference is that Map allows keys of **any type** (including objects, functions, and primitives) and maintains the **insertion order** of elements.
 
 ---
 
-## 2. Big Omega Notation ($\Omega$) – The Lower Bound
+## 1. Core Properties & Initialization
 
-**Big Omega** describes the **best-case scenario** or the minimum time/space an algorithm will take. It provides a "floor" for the algorithm's performance.
+### Creating a Map
 
-- **Mathematical Definition**: $f(n) = \Omega(g(n))$ if there exist positive constants $c$ and $n_0$ such that $0 \leq c \cdot g(n) \leq f(n)$ for all $n \geq n_0$.
-- **In Plain English**: "The algorithm is at least this fast."
+```javascript
+const myMap = new Map();
+// Or with initial data
+const userMap = new Map([
+  ["id", 1],
+  ["name", "Adam"],
+  ["role", "Admin"],
+]);
+```
 
----
+### The `size` Property
 
-## 3. Big Theta Notation ($\Theta$) – The Tight Bound
+Returns the number of key-value pairs in the Map.
 
-**Big Theta** describes the **average case** or the exact growth rate of an algorithm. It is used when the upper and lower bounds are the same, meaning the algorithm's performance is tightly "sandwiched" between two functions of the same growth rate.
-
-- **Mathematical Definition**: $f(n) = \Theta(g(n))$ if and only if $f(n) = O(g(n))$ and $f(n) = \Omega(g(n))$.
-- **In Plain English**: "The algorithm behaves exactly like this."
-
----
-
-## 4. Common Complexity Classes
-
-Ranked from most efficient to least efficient:
-
-| Notation      | Name        | Key Characteristic                                         |
-| :------------ | :---------- | :--------------------------------------------------------- |
-| $O(1)$        | Constant    | Time stays the same regardless of $n$.                     |
-| $O(\log n)$   | Logarithmic | Time increases slowly (e.g., Binary Search).               |
-| $O(n)$        | Linear      | Time increases proportionally to $n$ (e.g., Simple Loop).  |
-| $O(n \log n)$ | Log-linear  | Efficient sorting algorithms (e.g., Heapsort, Merge Sort). |
-| $O(n^2)$      | Quadratic   | Nested loops over the input.                               |
-| $O(2^n)$      | Exponential | Doubling time with each new element.                       |
-| $O(n!)$       | Factorial   | Extremely slow (e.g., Traveling Salesman Problem).         |
+```javascript
+console.log(myMap.size); // 0
+```
 
 ---
 
-## 5. Why the Distinction Matters?
+## 2. Essential Map Methods
 
-Understanding the difference between these notations is crucial for selecting the right tool for the job:
+### `set(key, value)`
 
-1. **Scalability**: An algorithm might be fast for $n=10$ but impossible for $n=1,000,000$ if it has a high Big O complexity.
-2. **Predictability**: Using $\Theta$ allows for precise performance guarantees.
-3. **Resource Management**: In memory-constrained environments, $O(1)$ space complexity is often preferred over $O(n)$ even if time complexity is slightly higher.
+Adds or updates an element with a specified key and value. It returns the Map object, allowing for method chaining.
+
+```javascript
+myMap
+  .set("status", "online")
+  .set("priority", 1)
+  .set({ type: "internal" }, "Secret Code");
+```
+
+### `get(key)`
+
+Retrieves the value associated with the key. Returns `undefined` if the key doesn't exist.
+
+```javascript
+const status = myMap.get("status"); // 'online'
+```
+
+### `has(key)`
+
+Returns a boolean indicating whether an element with the specified key exists or not.
+
+```javascript
+if (myMap.has("priority")) {
+  console.log("Priority is set!");
+}
+```
+
+### `delete(key)`
+
+Removes the specified element by key. Returns `true` if it existed and was removed, `false` otherwise.
+
+```javascript
+myMap.delete("status"); // true
+```
+
+### `clear()`
+
+Removes all key-value pairs from the Map.
+
+```javascript
+myMap.clear();
+console.log(myMap.size); // 0
+```
 
 ---
 
-## 6. Practical Example: Linear Search
+## 3. Iteration Methods
 
-For an array of size $n$:
+Maps preserve the order of elements, giving you several ways to traverse them:
 
-- **Best Case ($\Omega(1)$)**: The element is at the very first position.
-- **Worst Case ($O(n)$)**: The element is at the last position or not present at all.
-- **Average Case ($\Theta(n)$)**: On average, you'll look through half the elements, which still grows linearly.
+### `keys()`
+
+Returns an iterator for the keys.
+
+```javascript
+for (let key of userMap.keys()) {
+  console.log(key);
+}
+```
+
+### `values()`
+
+Returns an iterator for the values.
+
+```javascript
+for (let value of userMap.values()) {
+  console.log(value);
+}
+```
+
+### `entries()`
+
+Returns an iterator for `[key, value]` pairs (the default iterator for Map).
+
+```javascript
+for (let [key, value] of userMap.entries()) {
+  console.log(`${key}: ${value}`);
+}
+```
+
+### `forEach(callback)`
+
+Standard array-like iteration.
+
+```javascript
+userMap.forEach((value, key) => {
+  console.log(`${key} is ${value}`);
+});
+```
+
+---
+
+## 4. Key Differences: Map vs. Object
+
+| Feature         | Map                               | Object                     |
+| :-------------- | :-------------------------------- | :------------------------- |
+| **Key Types**   | Any (Object, Function, Primitive) | String or Symbol           |
+| **Order**       | Preserves insertion order         | Generally not guaranteed   |
+| **Size**        | Built-in `size` property          | Must calculate manually    |
+| **Performance** | Better for frequent add/remove    | Standard for data modeling |
+| **Iteration**   | Directly iterable                 | Requires `Object.keys()`   |
+
+---
+
+## 5. Frequency Patterns & Use Cases
+
+- **Caching/Memoization**: Maps are excellent for storing results of expensive function calls keyed by complex objects.
+- **Data Association**: Linking metadata to DOM elements or specific objects without polluting the objects themselves.
+- **Large Collections**: More performant than objects for massive datasets with frequent modifications.
