@@ -45,3 +45,15 @@ Even in creative fields like art and music, machine learning generates human-lik
 Despite its success, machine learning faces several challenges. Models can inherit biases present in their training data, leading to unfair or inaccurate results. They can also be opaque, making it difficult to understand how specific decisions are made — a problem known as the **“black-box” issue**. Moreover, large models require significant computational power and energy, prompting ongoing research into more efficient and interpretable algorithms.
 
 Looking ahead, innovations in **explainable AI**, **transfer learning**, and **federated learning** aim to make ML systems more transparent, sustainable, and adaptable. As computing power increases and data becomes more abundant, machine learning will continue to redefine how we live, work, and interact with technology — becoming not just a tool of discovery but a partner in innovation.
+
+### The challenges and future of machine learning
+
+Despite its success, machine learning faces several challenges. Models can inherit biases present in their training data, leading to unfair or inaccurate results. They can also be opaque, making it difficult to understand how specific decisions are made — a problem known as the **“black-box” issue**. Moreover, large models require significant computational power and energy, prompting ongoing research into more efficient and interpretable algorithms.
+
+Looking ahead, innovations in **explainable AI**, **transfer learning**, and **federated learning** aim to make ML systems more transparent, sustainable, and adaptable. As computing power increases and data becomes more abundant, machine learning will continue to redefine how we live, work, and interact with technology — becoming not just a tool of discovery but a partner in innovation.
+
+### The challenges and future of machine learning
+
+Despite its success, machine learning faces several challenges. Models can inherit biases present in their training data, leading to unfair or inaccurate results. They can also be opaque, making it difficult to understand how specific decisions are made — a problem known as the **“black-box” issue**. Moreover, large models require significant computational power and energy, prompting ongoing research into more efficient and interpretable algorithms.
+
+Looking ahead, innovations in **explainable AI**, **transfer learning**, and **federated learning** aim to make ML systems more transparent, sustainable, and adaptable. As computing power increases and data becomes more abundant, machine learning will continue to redefine how we live, work, and interact with technology — becoming not just a tool of discovery but a partner in innovation.
