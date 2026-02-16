@@ -1,47 +1,79 @@
-Machine learning (ML) is a field of artificial intelligence (AI) that focuses on creating systems capable of learning from data and improving their performance over time without being explicitly programmed. Instead of following fixed, rule-based instructions, ML models use statistical methods to find patterns, make predictions, and adapt when presented with new information. This approach has transformed how humans interact with technology and how organizations analyze massive datasets.
+# Clawdbot (now OpenClaw) 🤖
 
-### What machine learning really means
+![Clawdbot Logo](logo.png)
 
-At its heart, machine learning is about experience. Just as humans learn through examples — recognizing faces, understanding languages, or identifying trends — ML systems do the same by processing large amounts of data. When trained, an algorithm detects correlations, trends, and structures within the data and builds a mathematical model capable of making predictions on unseen inputs.
+> **Your Open-Source, Self-Hosted Personal AI Assistant.**
 
-For example, in an email spam filter, the model learns differences between spam and legitimate emails by examining thousands of examples. Once trained, it can automatically identify and filter new spam emails based on similar characteristics, even if they contain words or structures it has never encountered before.
+**Clawdbot** is a powerful, privacy-first AI companion designed to live on your own hardware. It integrates seamlessly with your favorite messaging platforms—WhatsApp, Telegram, iMessage, Slack, and Discord—to automate your life, manage your data, and provide intelligent insights without ever sending your personal logs to the cloud.
 
-### Key categories of machine learning
+---
 
-Machine learning algorithms are generally grouped into three major types:
+## ✨ Key Features
 
-- **Supervised learning** uses labeled datasets — meaning the correct answer is known for each example. The goal is to learn a function that maps inputs to outputs. Classic applications include image classification, sentiment analysis, and predicting housing prices. Algorithms such as linear regression, support vector machines (SVMs), and neural networks often fall under this category.
+- 🏠 **Privacy-First & Self-Hosted**: Run Clawdbot on your Mac, Windows, Linux, or VPS. Your data stays where it belongs: with you.
+- 💬 **Multi-Platform Integration**: Interact with your AI assistant directly through the apps you already use every day.
+- 🚀 **Advanced Task Automation**: Beyond simple chat, Clawdbot can execute complex browser automations, control smart home devices, and run custom scripts.
+- 🧠 **Persistent Memory**: Clawdbot remembers your preferences, past conversations, and specific instructions, evolving as you interact with it.
+- 🔔 **Proactive Intelligence**: Get morning briefings, custom alerts, and proactive suggestions based on your schedule and interests.
+- 🔌 **Extensible Plugin System**: Open-source and highly customizable. Add new "skills" or integrate with local AI models like Ollama.
 
-- **Unsupervised learning** deals with unlabeled data. The model tries to uncover hidden structures or patterns without predefined outputs. Common tasks include clustering (e.g., grouping customers by behavior) and dimensionality reduction (simplifying complex data for visualization or analysis). Algorithms like k-means clustering, principal component analysis (PCA), and autoencoders are widely used here.
+---
 
-- **Reinforcement learning** (RL) is inspired by behavioral psychology. In reinforcement learning, an agent interacts with an environment, making decisions and receiving feedback through rewards or penalties. Over time, it learns strategies that maximize long-term success. Famous examples include DeepMind’s AlphaGo, which learned to play the board game Go at a superhuman level, and applications in robotics and autonomous driving.
+## 🛠️ Technology Stack
 
-### How models learn: the training process
+Clawdbot is built to be flexible and powerful:
 
-To “learn,” an ML algorithm typically goes through an iterative training process. The steps include:
+- **AI Engine**: Supports Claude 3.5 Sonnet, GPT-4o, and local models via Ollama.
+- **Backend**: High-performance engine designed for low latency and high reliability.
+- **Connectivity**: Native integrations with iMessage, WhatsApp (via Multi-Device API), and Telegram.
 
-1. **Data collection**: Gathering large and diverse datasets relevant to the problem.
-2. **Preprocessing**: Cleaning, normalizing, and transforming data so that it can be interpreted by the model.
-3. **Training**: Feeding the processed data to the algorithm, allowing it to adjust internal parameters (like weights in a neural network) to minimize prediction errors.
-4. **Evaluation**: Testing the trained model on new data to measure its accuracy and ensure it generalizes well.
-5. **Deployment and monitoring**: Integrating the model into real-world systems and continuously updating it as new data and patterns emerge.
+---
 
-For example, a machine learning model predicting traffic congestion might receive live input from sensors, GPS data, and weather reports, continually updating its understanding of how conditions affect traffic flow.
+## 🚀 Getting Started
 
-### Applications transforming industries
+### 1. Installation
 
-Machine learning has found its way into nearly every modern industry:
+Clone the repository and install dependencies:
 
-- **Healthcare**: Predicting diseases from medical images, personalizing treatments, and helping discover new drugs.
-- **Finance**: Detecting fraudulent transactions, optimizing investment strategies, and assessing credit risk.
-- **Retail and e-commerce**: Powering recommendation systems, customer behavior prediction, and logistics optimization.
-- **Transportation**: Enabling self-driving cars, predicting demand in ride-sharing networks, and improving route efficiency.
-- **Cybersecurity**: Detecting anomalies in network traffic and identifying potential threats before they occur.
+```bash
+git clone https://github.com/your-repo/clawdbot.git
+cd clawdbot
+npm install
+```
 
-Even in creative fields like art and music, machine learning generates human-like paintings, composes melodies, and assists writers in drafting or editing text.
+### 2. Configuration
 
-### The challenges and future of machine learning
+Create a `.env` file and add your API keys and configuration settings:
 
-Despite its success, machine learning faces several challenges. Models can inherit biases present in their training data, leading to unfair or inaccurate results. They can also be opaque, making it difficult to understand how specific decisions are made — a problem known as the **“black-box” issue**. Moreover, large models require significant computational power and energy, prompting ongoing research into more efficient and interpretable algorithms.
+```env
+AI_PROVIDER=anthropic
+ANTHROPIC_API_KEY=your_key_here
+PLATFORM=telegram
+TELEGRAM_BOT_TOKEN=your_token_here
+```
 
-Looking ahead, innovations in **explainable AI**, **transfer learning**, and **federated learning** aim to make ML systems more transparent, sustainable, and adaptable. As computing power increases and data becomes more abundant, machine learning will continue to redefine how we live, work, and interact with technology — becoming not just a tool of discovery but a partner in innovation.
+### 3. Run Locally
+
+```bash
+npm start
+```
+
+---
+
+## 🔒 Security & Privacy
+
+Clawdbot is designed with a **"security by default"** architecture. Because it requires access to sensitive data (messages, calendar, etc.), we strongly recommend:
+
+- Running it inside a dedicated container or VM.
+- Restricting network access to only necessary APIs.
+- Regularly auditing the open-source code for updates.
+
+---
+
+## 📜 License
+
+Distributed under the **MIT License**. See `LICENSE` for more information.
+
+---
+
+Built with ❤️ by the Clawdbot Community.
