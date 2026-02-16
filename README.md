@@ -4,8 +4,6 @@
 
 **Clawdbot** is a powerful, privacy-first AI companion designed to live on your own hardware. It integrates seamlessly with your favorite messaging platforms—WhatsApp, Telegram, iMessage, Slack, and Discord—to automate your life, manage your data, and provide intelligent insights without ever sending your personal logs to the cloud.
 
----
-
 ## ✨ Key Features
 
 - 🏠 **Privacy-First & Self-Hosted**: Run Clawdbot on your Mac, Windows, Linux, or VPS. Your data stays where it belongs: with you.
@@ -14,8 +12,6 @@
 - 🧠 **Persistent Memory**: Clawdbot remembers your preferences, past conversations, and specific instructions, evolving as you interact with it.
 - 🔔 **Proactive Intelligence**: Get morning briefings, custom alerts, and proactive suggestions based on your schedule and interests.
 - 🔌 **Extensible Plugin System**: Open-source and highly customizable. Add new "skills" or integrate with local AI models like Ollama.
-
----
 
 ## 🛠️ Technology Stack
 
