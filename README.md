@@ -1,26 +1,37 @@
 # Clawdbot (now OpenClaw) 🤖
 
-![Clawdbot Logo](logo.png)
+> **Your Open-Source, Self-Hosted Personal AI Assistant.**
 
-> **Privacy-First, Self-Hosted AI Assistant.**
-
-**Clawdbot** is an open-source AI companion that runs on your local machine. It bridges your favorite messaging apps (WhatsApp, Telegram, iMessage, Discord) with your file system and local tools, allowing you to automate tasks without compromising privacy.
+**Clawdbot** is a powerful, privacy-first AI companion designed to live on your own hardware. It integrates seamlessly with your favorite messaging platforms—WhatsApp, Telegram, iMessage, Slack, and Discord—to automate your life, manage your data, and provide intelligent insights without ever sending your personal logs to the cloud.
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-- **🏠 Privacy First**: Your data stays on your device. Support for local LLMs (Ollama/Llama 3).
-- **💬 Omnichannel**: Chat via Telegram, WhatsApp, iMessage, or Discord.
-- **🚀 Automation**: Execute shell commands, browse the web, and control smart home devices.
-- **🧠 Memory**: Persistent vector storage remembers context across conversations.
-- **🔌 Extensible**: Add new capabilities with simple JavaScript/Python plugins.
+- 🏠 **Privacy-First & Self-Hosted**: Run Clawdbot on your Mac, Windows, Linux, or VPS. Your data stays where it belongs: with you.
+- 💬 **Multi-Platform Integration**: Interact with your AI assistant directly through the apps you already use every day.
+- 🚀 **Advanced Task Automation**: Beyond simple chat, Clawdbot can execute complex browser automations, control smart home devices, and run custom scripts.
+- 🧠 **Persistent Memory**: Clawdbot remembers your preferences, past conversations, and specific instructions, evolving as you interact with it.
+- 🔔 **Proactive Intelligence**: Get morning briefings, custom alerts, and proactive suggestions based on your schedule and interests.
+- 🔌 **Extensible Plugin System**: Open-source and highly customizable. Add new "skills" or integrate with local AI models like Ollama.
 
 ---
 
-## 🚀 Quick Start
+## 🛠️ Technology Stack
 
-### 1. Install
+Clawdbot is built to be flexible and powerful:
+
+- **AI Engine**: Supports Claude 3.5 Sonnet, GPT-4o, and local models via Ollama.
+- **Backend**: High-performance engine designed for low latency and high reliability.
+- **Connectivity**: Native integrations with iMessage, WhatsApp (via Multi-Device API), and Telegram.
+
+---
+
+## 🚀 Getting Started
+
+### 1. Installation
+
+Clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/your-repo/clawdbot.git
@@ -28,18 +39,18 @@ cd clawdbot
 npm install
 ```
 
-### 2. Configure
+### 2. Configuration
 
-Copy `.env.example` to `.env` and set your keys:
+Create a `.env` file and add your API keys and configuration settings:
 
 ```env
-AI_PROVIDER=anthropic      # or 'ollama' for local
-ANTHROPIC_API_KEY=sk-...   # if using cloud
-PLATFORM=telegram          # whatsapp, imessage, discord
-TELEGRAM_BOT_TOKEN=...
+AI_PROVIDER=anthropic
+ANTHROPIC_API_KEY=your_key_here
+PLATFORM=telegram
+TELEGRAM_BOT_TOKEN=your_token_here
 ```
 
-### 3. Run
+### 3. Run Locally
 
 ```bash
 npm start
@@ -47,26 +58,20 @@ npm start
 
 ---
 
-## 🛠️ Create a Skill
+## 🔒 Security & Privacy
 
-Extend functionality by adding a file to `skills/`.
+Clawdbot is designed with a **"security by default"** architecture. Because it requires access to sensitive data (messages, calendar, etc.), we strongly recommend:
 
-**Example: `skills/roll_dice.js`**
-
-```javascript
-export const diceSkill = {
-  name: "roll_dice",
-  description: "Roll a die",
-  execute: async () => `🎲 You rolled a ${Math.floor(Math.random() * 6) + 1}!`,
-};
-```
+- Running it inside a dedicated container or VM.
+- Restricting network access to only necessary APIs.
+- Regularly auditing the open-source code for updates.
 
 ---
 
-## 🔒 Security
+## 📜 License
 
-Clawdbot has system access. **Always audit new skills** and consider running in a Docker container for isolation.
+Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ---
 
-Distributed under the **MIT License**.
+Built with ❤️ by the Clawdbot Community.
