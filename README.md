@@ -1,125 +1,13 @@
-# Claude CLI (Claude Code) 🤖 Terminal-Based Agentic Coder
+Claude Code is an agentic coding tool by Anthropic that functions as a full-fledged collaborator within your terminal. It goes beyond simple autocomplete by understanding your entire codebase, executing shell commands, editing files, and managing Git workflows through natural language. This tool is designed to live where developers work, providing deep integration with the command line to build software more efficiently.
 
-> **Build software at the speed of thought, directly from your terminal.**
+To get started, you must have Node.js version 18.0.0 or later and a valid Anthropic API key with access to Claude 3.5 Sonnet. The CLI is installed globally using the command `npm install -g @anthropic-ai/claude-code`. Once installed, you can verify the setup by running `claude --version` to ensure the tool is ready for use in your projects.
 
-**Claude Code** is an agentic coding tool by Anthropic that lives where you work: the command line. It isn't just an autocomplete engine; it's a full-fledged collaborator that can understand your entire codebase, execute terminal commands, edit files, and manage your Git workflow—all through natural language.
+The tool operates through an interactive session started with the `claude` command, or via one-off tasks by passing a string argument like `claude "fix the login bug"`. Within the session, you can use slash commands such as `/config` to manage settings or `/permissions` to control how the agent interacts with your system. You can also reference specific files using the `@` symbol or execute direct shell commands by prefixing them with an exclamation mark.
 
----
+Claude Code stands out due to its agentic reasoning and context awareness, utilizing "Extended Thinking" to solve complex architectural problems. It automatically indexes local files while respecting your `.gitignore` and can safely run tests or linting scripts to verify its own work. For larger projects, it can even spawn sub-agents to parallelize tasks across different parts of your system.
 
-## 🚀 Quick Start
+Security is managed through a tiered permission system that includes a default mode where Claude asks for approval, a read-only Plan Mode, and an Auto-Accept mode for low-risk changes. Safety features like reversible checkpoints and directory-limited sandboxing ensure that you remain in control of every file edit. This human-in-the-loop approach requires you to review every diff before changes are finalized on your system.
 
-### 1. Prerequisites
+Configuration is handled through a hierarchical system, including a project-specific `CLAUDE.md` file for coding standards and global user settings in your home directory. Additionally, the tool supports the Model Context Protocol, allowing it to connect to external services like Jira, GitHub Issues, or Sentry. These integrations enable Claude to track progress, analyze production errors, and query database schemas directly from the terminal.
 
-Ensure you have the following installed:
-
-- **Node.js**: v18.0.0 or later.
-- **Anthropic API Key**: A valid key with access to Claude 3.5 Sonnet.
-
-### 2. Installation
-
-Install the Claude CLI globally using npm:
-
-```bash
-npm install -g @anthropic-ai/claude-code
-```
-
-### 3. Verification
-
-Run the version check to ensure it's installed correctly:
-
-```bash
-claude --version
-```
-
----
-
-## ⌨️ Common Commands & REPL Usage
-
-| Command / Shortcut | Description                                             |
-| :----------------- | :------------------------------------------------------ |
-| `claude`           | Start an interactive session in the current directory.  |
-| `claude "task"`    | Run a one-off task (e.g., `claude "fix the login bug"`) |
-| `claude login`     | Authenticate with your Anthropic account.               |
-| `/config`          | Access the interactive configuration menu (REPL only).  |
-| `/permissions`     | View and manage tool execution permissions.             |
-| `!command`         | Execute a shell command directly from the REPL.         |
-| `@filename`        | Reference a specific file context in your message.      |
-
----
-
-## 🛠️ Performance & Capabilities
-
-Claude CLI is designed for deep integration with your development environment:
-
-- **Agentic Reasoning:** Unlike simple chat windows, Claude Code uses "Extended Thinking" to reason through complex architectural problems before writing a single line of code.
-- **Context-Aware:** Automatically indexes your local files and respects your `.gitignore`.
-- **Safe Execution:** Can run tests, build scripts, and linting commands to verify its own work.
-- **Git Mastery:** Can stage changes, write meaningful commit messages, and even help with PR descriptions.
-- **Subagents:** For massive tasks, Claude can spawn sub-agents to parallelize work across different parts of your system.
-
----
-
-## 🔒 Security & Workflow Modes
-
-Claude Code prioritizes safety with a tiered permission system:
-
-### Permission Modes
-
-- **Default:** Claude asks for permission before executing potentially sensitive commands.
-- **Plan Mode:** Claude analyzes and proposes changes without modifying any files.
-- **Auto-Accept:** Streamlines the workflow for low-risk changes (use with caution).
-
-### Safety Features
-
-- **Checkpoints:** Every file edit is reversible. You can rollback changes if the result isn't what you expected.
-- **Sandboxing:** Write operations are strictly limited to your project's working directory.
-- **Human-in-the-loop:** You review every diff before it is committed to your file system.
-
----
-
-## ⚙️ Configuration & Customization
-
-Claude Code is highly configurable through a hierarchical settings system:
-
-1.  **Project Context (`CLAUDE.md`):** Create a `CLAUDE.md` in your project root to provide project-specific conventions, tech stack details, and coding standards.
-2.  **User Settings:** Managed in `~/.claude/settings.json`.
-3.  **Local Overrides:** Managed in `.claude/settings.local.json`.
-
-### MCP Integration
-
-Claude Code supports the **Model Context Protocol (MCP)**, allowing it to connect to external tools like:
-
-- **Jira/GitHub Issues:** For tracking progress.
-- **Sentry:** For analyzing production errors.
-- **Custom Databases:** For querying schemas directly.
-
----
-
-## 💡 Example Workflows
-
-### Bug Hunting
-
-`> claude "Investigate why the /api/user endpoint is returning a 500 error and fix it."`
-Claude will read the logs, find the file, identify the logic error, and offer to apply a fix.
-
-### Modernization
-
-`> claude "Refactor all Class components in /src/components to Functional components with Hooks."`
-Claude will systematically update your files while keeping the logic intact.
-
-### Testing & Quality
-
-`> claude "Write Jest unit tests for the utility functions in utils/math.ts and run them to make sure they pass."`
-Claude will write the tests AND execute them in your terminal to verify correctness.
-
----
-
-## 📜 Official Resources
-
-- [Technical Documentation](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code)
-- [Anthropic Console](https://console.anthropic.com/)
-- [Model Context Protocol (MCP)](https://modelcontextprotocol.io)
-
----
-
-Built for developers who live in the terminal. ⚡
+Common workflows involve bug hunting, where Claude can investigate API errors and apply fixes, or large-scale refactoring, such as converting class components to functional components. It is also highly effective for testing and quality assurance, as it can write Jest unit tests and execute them to ensure correctness. These capabilities make it a powerful resource for developers who prioritize staying within their terminal environment.
