@@ -1,4 +1,4 @@
-# Claude CLI (Claude Code) 🤖 terminal-based agentic coder
+# Claude CLI (Claude Code) 🤖 Terminal-Based Agentic Coder
 
 > **Build software at the speed of thought, directly from your terminal.**
 
@@ -6,7 +6,7 @@
 
 ---
 
-## � Quick Start
+## 🚀 Quick Start
 
 ### 1. Prerequisites
 
@@ -33,25 +33,65 @@ claude --version
 
 ---
 
-## ⌨️ Common Commands
+## ⌨️ Common Commands & REPL Usage
 
-| Command         | Description                                             |
-| :-------------- | :------------------------------------------------------ |
-| `claude`        | Start an interactive session in the current directory.  |
-| `claude "task"` | Run a one-off task (e.g., `claude "fix the login bug"`) |
-| `claude login`  | Authenticate with your Anthropic account.               |
-| `claude config` | Manage your preferences and model settings.             |
+| Command / Shortcut | Description                                             |
+| :----------------- | :------------------------------------------------------ |
+| `claude`           | Start an interactive session in the current directory.  |
+| `claude "task"`    | Run a one-off task (e.g., `claude "fix the login bug"`) |
+| `claude login`     | Authenticate with your Anthropic account.               |
+| `/config`          | Access the interactive configuration menu (REPL only).  |
+| `/permissions`     | View and manage tool execution permissions.             |
+| `!command`         | Execute a shell command directly from the REPL.         |
+| `@filename`        | Reference a specific file context in your message.      |
 
 ---
 
-## �️ Performance & Capabilities
+## 🛠️ Performance & Capabilities
 
 Claude CLI is designed for deep integration with your development environment:
 
-- **Context-Aware:** Automatically indexes your local files to answer complex questions about your architecture.
+- **Agentic Reasoning:** Unlike simple chat windows, Claude Code uses "Extended Thinking" to reason through complex architectural problems before writing a single line of code.
+- **Context-Aware:** Automatically indexes your local files and respects your `.gitignore`.
 - **Safe Execution:** Can run tests, build scripts, and linting commands to verify its own work.
 - **Git Mastery:** Can stage changes, write meaningful commit messages, and even help with PR descriptions.
-- **Zero Latency:** Optimized for the terminal, providing a fast, text-based interface that doesn't break your flow.
+- **Subagents:** For massive tasks, Claude can spawn sub-agents to parallelize work across different parts of your system.
+
+---
+
+## 🔒 Security & Workflow Modes
+
+Claude Code prioritizes safety with a tiered permission system:
+
+### Permission Modes
+
+- **Default:** Claude asks for permission before executing potentially sensitive commands.
+- **Plan Mode:** Claude analyzes and proposes changes without modifying any files.
+- **Auto-Accept:** Streamlines the workflow for low-risk changes (use with caution).
+
+### Safety Features
+
+- **Checkpoints:** Every file edit is reversible. You can rollback changes if the result isn't what you expected.
+- **Sandboxing:** Write operations are strictly limited to your project's working directory.
+- **Human-in-the-loop:** You review every diff before it is committed to your file system.
+
+---
+
+## ⚙️ Configuration & Customization
+
+Claude Code is highly configurable through a hierarchical settings system:
+
+1.  **Project Context (`CLAUDE.md`):** Create a `CLAUDE.md` in your project root to provide project-specific conventions, tech stack details, and coding standards.
+2.  **User Settings:** Managed in `~/.claude/settings.json`.
+3.  **Local Overrides:** Managed in `.claude/settings.local.json`.
+
+### MCP Integration
+
+Claude Code supports the **Model Context Protocol (MCP)**, allowing it to connect to external tools like:
+
+- **Jira/GitHub Issues:** For tracking progress.
+- **Sentry:** For analyzing production errors.
+- **Custom Databases:** For querying schemas directly.
 
 ---
 
@@ -67,10 +107,10 @@ Claude will read the logs, find the file, identify the logic error, and offer to
 `> claude "Refactor all Class components in /src/components to Functional components with Hooks."`
 Claude will systematically update your files while keeping the logic intact.
 
-### Testing
+### Testing & Quality
 
 `> claude "Write Jest unit tests for the utility functions in utils/math.ts and run them to make sure they pass."`
-Claude will write the tests AND execute them in your terminal.
+Claude will write the tests AND execute them in your terminal to verify correctness.
 
 ---
 
@@ -78,7 +118,7 @@ Claude will write the tests AND execute them in your terminal.
 
 - [Technical Documentation](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code)
 - [Anthropic Console](https://console.anthropic.com/)
-- [Feedback & Support](https://support.anthropic.com)
+- [Model Context Protocol (MCP)](https://modelcontextprotocol.io)
 
 ---
 
