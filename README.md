@@ -1,80 +1,85 @@
-# Claude Desktop & Claude Code 🚀
+# Claude CLI (Claude Code) 🤖 terminal-based agentic coder
 
-> **The ultimate power tools for building with Claude.**
+> **Build software at the speed of thought, directly from your terminal.**
 
-Welcome to the comprehensive guide for downloading and setting up **Claude Desktop** and **Claude Code**. Whether you prefer a beautiful GUI experience or the raw power of a terminal-based agentic coder, Anthropic has you covered.
-
----
-
-## 🖥️ Claude Desktop (GUI)
-
-Claude Desktop brings the power of Claude 3.5 Sonnet directly to your OS with deeper integration than the web version.
-
-### ✨ Key Features
-
-- **Local File Access:** Grant Claude permission to read your local files for better context.
-- **Desktop Extensions:** Integration with tools like Google Drive, Microsoft OneDrive, and GitHub.
-- **Fast Access:** Dedicated app window with native performance and keyboard shortcuts.
-- **Synced Experience:** All your chats and projects sync across web, mobile, and desktop.
-
-### 📥 Download & Install
-
-| Platform    | Download Link                                      | Installation                          |
-| :---------- | :------------------------------------------------- | :------------------------------------ |
-| **macOS**   | [Download for Mac](https://claude.ai/download)     | Open `.dmg` and drag to Applications. |
-| **Windows** | [Download for Windows](https://claude.ai/download) | Run the `.exe` installer.             |
+**Claude Code** is an agentic coding tool by Anthropic that lives where you work: the command line. It isn't just an autocomplete engine; it's a full-fledged collaborator that can understand your entire codebase, execute terminal commands, edit files, and manage your Git workflow—all through natural language.
 
 ---
 
-## 💻 Claude Code (CLI)
+## � Quick Start
 
-Claude Code is an agentic coding tool that lives in your terminal. It doesn't just suggest code; it executes routines, manages Git, and builds software alongside you.
+### 1. Prerequisites
 
-### �️ Prerequisites
+Ensure you have the following installed:
 
-- **Node.js:** version 18 or newer.
-- **Homebrew (Recommended for Mac):** To manage Node versions via `nvm`.
+- **Node.js**: v18.0.0 or later.
+- **Anthropic API Key**: A valid key with access to Claude 3.5 Sonnet.
 
-### 🚀 Installation
+### 2. Installation
 
-Open your terminal and run the following command to install Claude Code globally:
+Install the Claude CLI globally using npm:
 
 ```bash
 npm install -g @anthropic-ai/claude-code
 ```
 
-### ⌨️ Basic Usage
+### 3. Verification
 
-Once installed, simply type `claude` in any project directory to start the agent:
+Run the version check to ensure it's installed correctly:
 
 ```bash
-claude
+claude --version
 ```
 
-**Common tasks you can ask Claude Code:**
+---
 
-- "Explain how this authentication flow works."
-- "Refactor this component to use Tailwind CSS."
-- "Write unit tests for the utility functions."
-- "Find where the API error is originating from."
+## ⌨️ Common Commands
+
+| Command         | Description                                             |
+| :-------------- | :------------------------------------------------------ |
+| `claude`        | Start an interactive session in the current directory.  |
+| `claude "task"` | Run a one-off task (e.g., `claude "fix the login bug"`) |
+| `claude login`  | Authenticate with your Anthropic account.               |
+| `claude config` | Manage your preferences and model settings.             |
 
 ---
 
-## 🤝 Better Together
+## �️ Performance & Capabilities
 
-Using both tools creates a seamless workflow:
+Claude CLI is designed for deep integration with your development environment:
 
-1.  **Claude Desktop:** Use for high-level planning, research, and collaborative brainstorming.
-2.  **Claude Code:** Use for implementation, debugging, and terminal-heavy automation.
-
----
-
-## � Official Resources
-
-- [Claude.ai](https://claude.ai) - Web Interface
-- [Anthropic Documentation](https://docs.anthropic.com) - Developer Docs
-- [Claude Code FAQ](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code) - Detailed CLI Guide
+- **Context-Aware:** Automatically indexes your local files to answer complex questions about your architecture.
+- **Safe Execution:** Can run tests, build scripts, and linting commands to verify its own work.
+- **Git Mastery:** Can stage changes, write meaningful commit messages, and even help with PR descriptions.
+- **Zero Latency:** Optimized for the terminal, providing a fast, text-based interface that doesn't break your flow.
 
 ---
 
-Built for developers who want to move faster. ⚡
+## 💡 Example Workflows
+
+### Bug Hunting
+
+`> claude "Investigate why the /api/user endpoint is returning a 500 error and fix it."`
+Claude will read the logs, find the file, identify the logic error, and offer to apply a fix.
+
+### Modernization
+
+`> claude "Refactor all Class components in /src/components to Functional components with Hooks."`
+Claude will systematically update your files while keeping the logic intact.
+
+### Testing
+
+`> claude "Write Jest unit tests for the utility functions in utils/math.ts and run them to make sure they pass."`
+Claude will write the tests AND execute them in your terminal.
+
+---
+
+## 📜 Official Resources
+
+- [Technical Documentation](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code)
+- [Anthropic Console](https://console.anthropic.com/)
+- [Feedback & Support](https://support.anthropic.com)
+
+---
+
+Built for developers who live in the terminal. ⚡
