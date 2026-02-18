@@ -10,4 +10,4 @@ Security is managed through a permission system that can require confirmation be
 
 Configuration is handled through a layered system, often including a project-specific file where you describe conventions, tech stack details, and coding standards, plus global user settings stored in your home directory. Openclaw can also integrate with external services such as issue trackers, error monitoring tools, or databases, letting it pull in context like open tickets or schema information directly into its reasoning. These integrations enable Openclaw to support workflows like bug hunting, large-scale modernization, and automated test generation entirely from the terminal, making it especially attractive to developers who prefer a keyboard-driven environment.
 
-.
+Vyjebany github to neupdatuje
